@@ -44,7 +44,7 @@ while true; do
     echo "invalid input"
   fi
 done
-git status
+git log -n 2
 
 while true; do
   read -p "push changes? (y/N): " PUSH_CHOICE
