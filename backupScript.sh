@@ -14,6 +14,7 @@ echo "copying congfig files ..."
 for dotConfig in "${DOTCONFIGS[@]}"; do
   cp -r "$dotConfig" "$DOTCONFIGSDESTINATION"
 done
+cp -r "$SDDMCONFIGS" "$SDDMCONFIGSDESTINATION"
 git status
 
 while true; do
