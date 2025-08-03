@@ -1,20 +1,20 @@
 #!/bin/bash
 
 DOTCONFIGS=(
-  "$HOME/.config/alacritty"
-  "$HOME/.config/hypr"
-  "$HOME/.config/waybar"
+  "alacritty"
+  "hypr"
+  "waybar"
 )
-DOTCONFIGSDESTINATION="$HOME/Other/ArchConfigFiles/home/USER/.config/"
+DOTCONFIGSDESTINATION="./home/USER/.config"
 
 SDDMCONFIGS="/usr/share/sddm/themes"
-SDDMCONFIGSDESTINATION="$HOME/Other/ArchConfigFiles/usr/share/sddm/"
+SDDMCONFIGSDESTINATION="./usr/share/sddm"
 
-echo "copying congfig files ..."
+echo "copying config files ..."
 for dotConfig in "${DOTCONFIGS[@]}"; do
-  rsync -a --delete "$dotConfig" "$DOTCONFIGSDESTINATION"
+  rsync -a --delete "$HOME/.config/$dotConfig" "$DOTCONFIGSDESTINATION/"
 done
-rsync -a --delete "$SDDMCONFIGS" "$SDDMCONFIGSDESTINATION"
+rsync -a --delete "$SDDMCONFIGS" "$SDDMCONFIGSDESTINATION/"
 git status
 
 while true; do
