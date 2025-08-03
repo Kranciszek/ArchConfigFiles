@@ -1,0 +1,39 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["wireplumber", "clock", "tray"],
+
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+
+    "hyprland/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%d.%m.%Y | %H:%M}",
+        "tooltip": false
+    },
+
+    "wireplumber": {
+        "format": "\udb81\udd7e  {volume}%",
+        "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 2%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "format-muted": "<span color=\"#f7768e\">󰝟</span>",
+        "format-icons": [""]
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 6
+    }
+}

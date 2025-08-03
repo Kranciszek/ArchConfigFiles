@@ -1,0 +1,23 @@
+git
+base-devel
+yay
+	librewolf
+	nsxiv
+alacritty
+nemo
+ffmpegthumbnailer
+hyprpaper
+hyprlock
+hypridle
+waybar
+rofi
+gammastep
+grim
+slurp
+wl-clip-persist
+calcurse
+impala
+bluez-utils
+bluez-deprecated-tools
+blueman
+nvim
