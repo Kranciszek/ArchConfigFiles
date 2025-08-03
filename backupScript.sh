@@ -12,9 +12,9 @@ SDDMCONFIGSDESTINATION="$HOME/Other/ArchConfigFiles/usr/share/sddm/"
 
 echo "copying congfig files ..."
 for dotConfig in "${DOTCONFIGS[@]}"; do
-  cp -r "$dotConfig" "$DOTCONFIGSDESTINATION"
+  rsync -a --delete "$dotConfig" "$DOTCONFIGSDESTINATION"
 done
-cp -r "$SDDMCONFIGS" "$SDDMCONFIGSDESTINATION"
+rsync -a --delete "$SDDMCONFIGS" "$SDDMCONFIGSDESTINATION"
 git status
 
 while true; do

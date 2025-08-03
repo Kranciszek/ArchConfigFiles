@@ -3,6 +3,7 @@ base-devel
 yay
 	librewolf
 	nsxiv
+rsync
 alacritty
 nemo
 ffmpegthumbnailer
