@@ -35,7 +35,20 @@ while true; do
   read -p "commit changes? (Y/n): " COMMIT_CHOICE
   COMMIT_CHOICE=${COMMIT_CHOICE,,}
   if [[ -z "$COMMIT_CHOICE" || "$COMMIT_CHOICE" == "y" ]]; then
-    git commit -m "config files from $(date '+%Y-%m-%d')"
+    while true; do
+      read -p "custom comment? (y/N): " CCOMMENT_CHOICE
+      CCOMMENT_CHOICE=${CCOMMENT_CHOICE,,}
+      if [[ "$CCOMMENT_CHOICE" == "y" ]]; then
+        read -p "enter the comment: " CUSTOM_COMMENT
+        git commit -m "$CUSTOM_COMMENT"
+        break
+      elif [[ -z "$PUSH_CHOICE" || "$PUSH_CHOICE" == "n" ]]; then
+        git commit -m "config - $(date '+%d.%m.%Y')"
+        break
+      else
+        echo "invalid input"
+      fi
+    done
     break
   elif [[ "$COMMIT_CHOICE" == "n" ]]; then
     echo "changes not commited!"
