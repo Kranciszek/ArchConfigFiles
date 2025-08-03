@@ -1,14 +1,14 @@
 #!/bin/bash
 
 DOTCONFIGS=(
-  "~/.config/alacritty/"
-  "~/.config/hypr/"
-  "~/.config/waybar/"
+  "$HOME/.config/alacritty"
+  "$HOME/.config/hypr"
+  "$HOME/.config/waybar"
 )
-DOTCONFIGSDESTINATION="~/Other/ArchConfigFiles/home/USER/.config"
+DOTCONFIGSDESTINATION="$HOME/Other/ArchConfigFiles/home/USER/.config/"
 
-SDDMCONFIGS="/usr/share/sddm/themes/"
-SDDMCONFIGSDESTINATION="~/Other/ArchConfigFiles/usr/share/sddm/"
+SDDMCONFIGS="/usr/share/sddm/themes"
+SDDMCONFIGSDESTINATION="$HOME/Other/ArchConfigFiles/usr/share/sddm/"
 
 echo "copying congfig files ..."
 for dotConfig in "${DOTCONFIGS[@]}"; do
