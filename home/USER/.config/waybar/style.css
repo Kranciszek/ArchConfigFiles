@@ -52,6 +52,10 @@ window#waybar.solo {
     min-width:  140px;
 }
 
+#network {
+    margin:     0px 6px 0px 10px; 
+}
+
 #tray {
     margin:     0px 6px 0px 10px; 
 }

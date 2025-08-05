@@ -5,7 +5,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["wireplumber", "clock", "tray"],
+    "modules-right": ["wireplumber#source", "wireplumber", "clock", "network", "tray"],
 
 
     "hyprland/workspaces": {
@@ -20,16 +20,37 @@
 
     "clock": {
         "format": "{:%d.%m.%Y | %H:%M}",
-        "tooltip": false
+        "tooltip": false,
+	"on-click": "alacritty -e calcurse"
     },
 
     "wireplumber": {
-        "format": "\udb81\udd7e  {volume}%",
+        "format": "\udb81\udd7e {volume}%",
         "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 2%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	"on-click-middle": "easyeffects",
+	"on-click-right": "flatpak run com.saivert.pwvucontrol",
         "format-muted": "<span color=\"#f7768e\">󰝟</span>",
         "format-icons": [""]
+    },
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "󰍬",
+        "format-muted":"<span color=\"#f7768e\">󰍭</span>",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 0
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "<span color=\"#f7768e\">󰖪</span>",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+	"on-click": "alacritty -e impala"
     },
 
     "tray": {

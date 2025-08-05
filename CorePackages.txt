@@ -22,3 +22,6 @@ bluez-utils
 bluez-deprecated-tools
 blueman
 nvim
+easyeffects
+flatpak
+	pwvucontrol
